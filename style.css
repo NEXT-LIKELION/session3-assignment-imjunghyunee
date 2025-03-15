@@ -1,0 +1,256 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 폰트, 배경 등 */
+body {
+    font-family: sans-serif;
+    background-color: white;
+    color: black;
+}
+
+/* 헤더 스타일 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 16px;
+    background-color: white;
+    border-bottom: 1px solid white;
+    position: sticky;
+    top: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 24px;
+}
+
+/* 검색바 스타일 */
+.search-bar {
+    display: inline-flex;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 16px;
+    border: 1px solid gray;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 6px 12px;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.search-btn {
+    padding: 6px 16px;
+    border: none;
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.account-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.side-nav {
+    width: 220px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding-top: 8px;
+    overflow-y: auto;
+    float: left;
+}
+
+.side-nav ul {
+    list-style: none;
+}
+
+.side-nav .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.side-nav .nav-item:hover {
+    background-color: #f2f2f2;
+}
+
+.nav-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+
+/* 메인 컨텐츠 */
+.main-content {
+    margin-left: 220px;
+    /* 사이드바 너비만큼 오른쪽으로 밀어줌 */
+    padding: 16px;
+}
+
+/* 검색창 아래 카테고리/필터 버튼들 */
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    /* 화면 작아져도 그냥 잘려서 보이도록*/
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.filter-bar button {
+    padding: 6px 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 100%;
+    display: block;
+}
+
+.video-info {
+    display: flex;
+    padding: 8px;
+}
+
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.video-text .video-title {
+    font-weight: bold;
+}
+
+.video-text .video-channel {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+/* 반응형 설정 */
+
+/* >1536px */
+@media screen and (min-width: 1536px) {
+    .side-nav {
+        display: block;
+    }
+
+    .extended-items {
+        display: list-item;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 2) >1280px ~ 1535px
+     - 사이드 메뉴: 모든 버튼 보임
+     - 영상 그리드: 3개 열
+  */
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
+    .side-nav {
+        display: block;
+    }
+
+    .extended-items {
+        display: list-item;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 3) >1024px ~ 1279px
+     - 사이드 메뉴: "홈", "Shorts", "구독", "내 페이지"만 보임
+     - 영상 그리드: 3개 열
+  */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .side-nav {
+        display: block;
+    }
+
+    /* extended-items를 숨김 */
+    .extended-items {
+        display: none;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 4) >768px ~ 1023px
+     - 사이드 메뉴: "홈", "Shorts", "구독", "내 페이지"만 보임
+     - 영상 그리드: 2개 열
+  */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .side-nav {
+        display: block;
+    }
+
+    .extended-items {
+        display: none;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 5) <768px
+     - 사이드 메뉴: 안 보임
+     - 영상 그리드: 1개 열
+  */
+@media screen and (max-width: 767px) {
+    .side-nav {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

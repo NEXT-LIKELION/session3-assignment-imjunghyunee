@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>YouTube</title>
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <!-- 왼쪽 영역 (햄버거 버튼, YouTube 로고 등) -->
+        <div class="header-left">
+            <!-- 유튜브 로고 -->
+            <a href="youtube.html" class="logo">
+                <img src="img/youtube_logo.png" alt="YouTube Logo">
+            </a>
+        </div>
+
+        <!-- 검색 영역 -->
+        <div class="search-bar">
+            <input type="text" placeholder="검색" />
+            <button class="search-btn">
+                <!-- <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet" focusable="false"> -->
+                <!-- path d="M16.29616.996a88011.707-.708l3.9093.91-.707.707-3.909-3.909zM1811a77000-14077010140z" /> -->
+                <!-- <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" /> -->
+                검색
+                <!-- </svg> -->
+            </button>
+        </div>
+
+        <!-- 계정 아이콘 (회색 원) -->
+        <div class="account-icon"></div>
+    </header>
+
+    <!-- 사이드 네비게이션 -->
+    <nav class="side-nav">
+        <ul>
+            <!-- 기본 4개 메뉴 (홈, Shorts, 구독, 내 페이지) -->
+            <li class="nav-item all-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>홈</span>
+            </li>
+            <li class="nav-item all-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <!-- <path
+                            d="m7.6115.719.392-.22v-2.24l-.534-.228-.942-.404c-.869-.372-1.4-1.15-1.446-1.974-.047-.823.39-1.6421.203-2.097h.001L15.133.59c1.231-.6892.785-.273.466.833.6521.058.3132.452-.8793.118l-1.327.743-.388.217v2.243l.53.227.942.404c.869.3721.4 1.151.4461.974.047.823-.39 1.642-1.2032.097l-.002.001-8.8454.964-.001.001c-1.231.688-2.784.269-3.465-.834-.652-1.058-.313-2.451.879-3.118l1.327-.742Zm1.9936.002c-1.9051.066-4.356.46-5.475-1.355-1.057-1.713-.548-3.891.117-5.025a4.144.14 0 01.305-.189l1.327-.742-.942-.404a4.054.055 0 01-.709-.391c-.963-.666-1.578-1.718-1.644-2.877-.08-1.422.679-2.771.968-3.49l8.847-4.966c1.905-1.0664.356-.465.4751.3551.0571.713.5483.89-1.1175.025a4.074.074 0 01-.305.19l-1.327.742.942.403c.253.109.49.24.709.392.963.6661.5781.7171.6442.876.08 1.423-.6792.77-1.9683.491l-8.8474.965ZM1014.567a.25.25 0 00.374.217l4.45-2.567a.25.25 0 000-.433l-4.45-2.567a.25.25 0 00-.374.216v5.134Z" /> -->
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>Shorts</span>
+            </li>
+            <li class="nav-item all-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>구독</span>
+            </li>
+            <li class="nav-item all-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>내 페이지</span>
+            </li>
+
+            <!-- 확장 메뉴 (화면 크기에 따라 표시/비표시) -->
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>시청 기록</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>재생목록</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>나중에 볼 동영상</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>좋아요 표시한 동영상</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>인기 급상승</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>쇼핑</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>음악</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>영화</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>실시간</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>게임</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>스포츠</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>학습 프로그램</span>
+            </li>
+            <li class="nav-item extended-items">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path d="M12,4.33l7,6.12V20H15V14H9v6H5V10.45l7-6.12M12,3,4,10V21h6V15h4v6h6V10L12,3Z" />
+                    </svg>
+                </span>
+                <span>팟캐스트</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="main-content">
+        <!-- 검색창 아래의 필터/카테고리 버튼들 -->
+        <div class="filter-bar">
+            <button>전체</button>
+            <button>음악</button>
+            <button>뉴스</button>
+            <button>게임</button>
+            <button>라이브</button>
+            <button>애니메이션</button>
+            <button>관광</button>
+            <button>최근에 업로드된 동영상</button>
+            <button>새로운 맞춤 동영상</button>
+        </div>
+
+        <!-- 영상 목록 (썸네일, 제목, 채널) -->
+        <div class="videos-grid">
+            <!-- 영상 -->
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="thumbnail" src="img/thumbnail.png" alt="Thumbnail">
+                <div class="video-info">
+                    <img class="channel-icon" src="img/profile.jpg" alt="Channel">
+                    <div class="video-text">
+                        <p class="video-title">제목</p>
+                        <p class="video-channel">채널명</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
